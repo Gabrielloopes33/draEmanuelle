@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors - Updated to 'Aldora Medical' inspired palette */
+  --color-deep-purple: #2A1B5E;
+  /* Deep Violet/Indigo base */
+  --color-neon-orange: #FF6B35;
+  /* Vitality Orange */
+  --color-neon-pink: #E93CAC;
+  /* Magenta/Pink gradient end */
+  --color-soft-lilac: #F3F0FF;
+  /* Light purple background */
+
+  /* System Tokens */
+  --background: var(--color-soft-lilac);
+  /* Shift to a very light purple tint */
+  --foreground: var(--color-deep-purple);
+
+  /* Re-mapping for component compatibility */
+  --color-deep-navy: var(--color-deep-purple);
+  /* Aliased for backward compat */
+  --color-coral-start: var(--color-neon-orange);
+  --color-coral-end: var(--color-neon-pink);
+  --color-blush: #E0DAFB;
+  /* A slightly darker lilac for accents */
+
+  /* Glassmorphism token defaults */
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.65);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-navy: var(--color-deep-purple);
+  /* Retaining 'navy' utility name but mapping to purple */
+  --color-coral: var(--color-neon-orange);
+  --color-pink-accent: var(--color-neon-pink);
+  --color-blush: var(--color-blush);
+
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui;
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from blobs */
 }

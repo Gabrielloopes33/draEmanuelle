@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dra. Emanuelle Schirm - Quiropraxia Especializada 🦴✨
 
-## Getting Started
+Website institucional moderno e de alta conversão desenvolvido para a Dra. Emanuelle Schirm. O projeto foca em **autoridade**, **educação do paciente** e **agendamento de consultas**, utilizando uma estética premium baseada em Glassmorphism e gradientes vibrantes.
 
-First, run the development server:
+🔗 **Repositório:** [github.com/Gabrielloopes33/draEmanuelle](https://github.com/Gabrielloopes33/draEmanuelle)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎨 Identidade Visual & Design
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O design foi cuidadosamente elaborado para transmitir confiança e modernidade, inspirado em referências médicas de alto padrão ("Aldora Medical").
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Paleta de Cores**:
+    - **Deep Purple (`#2A1B5E`)**: Cor base para textos e headers, transmitindo sofisticação e confiança.
+    - **Neon Gradient (Orange `#FF6B35` → Pink `#E93CAC`)**: Utilizado em elementos de destaque, botões e gradientes para trazer vitalidade e energia.
+    - **Soft Lilac (`#F3F0FF`)**: Fundo suave para harmonizar com a identidade visual.
+- **Estilo**: **Glassmorphism** (efeito de vidro fosco), formas orgânicas ("blobs") flutuantes e tipografia moderna.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tecnologias Utilizadas
 
-## Learn More
+- **[Next.js 16](https://nextjs.org/)**: Framework React para alta performance e SEO.
+- **[Tailwind CSS v4](https://tailwindcss.com/)**: Estilização utilitária e sistema de design.
+- **[Framer Motion](https://www.framer.com/motion/)**: Animações suaves de entrada e interação.
+- **[Lucide React](https://lucide.dev/)**: Ícones leves e consistentes.
+- **TypeScript**: Para segurança de tipos e melhor experiência de desenvolvimento.
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Hero Section Impactante**: Headline clara com CTA direto para agendamento.
+- **Sobre a Dra. & Quiropraxia**: Seções educativas com layout visual rico.
+- **Serviços**: Cards detalhando tratamentos (Hérnia, Postura, Esportiva).
+- **Prova Social**: Carrossel de depoimentos e estatísticas de atendimento.
+- **FAQ Interativo**: Acordeão para responder dúvidas comuns.
+- **Botão WhatsApp Flutuante**: Acesso rápido para contato em qualquer parte da navegação.
+- **Responsividade Total**: Mobile-first, garantindo experiência perfeita em celulares.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Como Rodar o Projeto
 
-## Deploy on Vercel
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/Gabrielloopes33/draEmanuelle.git
+   cd draEmanuelle
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Acesse:** Abra `http://localhost:3000` no seu navegador.
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+---
+Desenvolvido com 💜 por [Gabriel Lopes](https://github.com/Gabrielloopes33)
