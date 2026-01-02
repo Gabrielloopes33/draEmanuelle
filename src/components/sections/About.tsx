@@ -11,8 +11,13 @@ export function About() {
                 <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
                     <div className="order-2 md:order-1 relative">
                         <div className="aspect-square bg-[var(--color-blush)] rounded-[2rem] relative z-0 transform -rotate-3"></div>
-                        <div className="absolute inset-0 bg-gray-200 rounded-[2rem] transform rotate-3 z-10 flex items-center justify-center text-gray-400 font-bold border-4 border-white shadow-xl">
-                            Imagem Ilustrativa (Coluna/Nervos)
+                        <div className="absolute inset-0 rounded-[2rem] transform rotate-3 z-10 border-4 border-white shadow-xl overflow-hidden">
+                            <Image
+                                src="/images/IMG_9537.jpg"
+                                alt="Ilustração de tratamento de coluna e nervos"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
 
@@ -65,11 +70,14 @@ export function About() {
                         </div>
 
                         <div className="flex justify-center">
-                            <div className="w-64 h-80 md:w-80 md:h-96 bg-gray-500 rounded-2xl shadow-2xl border-4 border-white/20 relative overflow-hidden">
-                                {/* Doctor Photo Placeholder */}
-                                <div className="absolute inset-0 flex items-center justify-center text-white/50 font-bold">
-                                    Foto Dra. Emanuelle
-                                </div>
+                            <div className="w-64 h-80 md:w-80 md:h-96 relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/20">
+                                <Image
+                                    src="/images/dra-emanuelle.jpg"
+                                    alt="Dra. Emanuelle Schirm realizando procedimento"
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
                             </div>
                         </div>
                     </div>

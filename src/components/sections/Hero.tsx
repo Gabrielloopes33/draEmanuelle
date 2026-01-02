@@ -3,15 +3,16 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 import { ArrowRight, BadgeCheck } from "lucide-react";
+import { PrismBackground } from "../backgrounds/PrismBackground";
+import Image from "next/image";
 
 export function Hero() {
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[var(--color-off-white)]">
-            {/* Dynamic Background Blobs */}
-            <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-[var(--color-blush)] rounded-full blur-[100px] opacity-60 animate-[float_8s_ease-in-out_infinite]" />
-            <div className="absolute top-[20%] right-[-5%] w-[400px] h-[400px] bg-[var(--color-coral-start)] rounded-full blur-[120px] opacity-20 animate-[float_10s_ease-in-out_infinite_reverse]" />
+        <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-white">
+            {/* Prism Background Effect */}
+            <PrismBackground />
 
-            <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-20">
 
                 {/* Text Content */}
                 <motion.div
@@ -62,13 +63,15 @@ export function Hero() {
                     className="relative hidden md:block"
                 >
                     {/* Main Photo Placeholder */}
-                    <div className="relative z-20 w-full h-[600px] bg-gradient-to-b from-transparent to-[var(--color-off-white)]">
-                        <div className="w-[80%] mx-auto h-full bg-gray-200 rounded-t-[100px] relative overflow-hidden shadow-2xl">
-                            {/* Replace with actual doctor photo */}
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold">
-                                Foto da Dra. Emanuelle
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-deep-navy)]/30 to-transparent"></div>
+                    <div className="relative z-20 w-full h-[750px]">
+                        <div className="w-[80%] mx-auto h-full rounded-t-[100px] relative overflow-hidden">
+                            <Image
+                                src="/images/emanuele (1).jpg"
+                                alt="Dra. Emanuelle Schirm"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
                         </div>
                     </div>
 
