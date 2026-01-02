@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 export function FAQ() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
     const faqs = [
         {
             question: "O ajuste quiroprático dói?",
@@ -28,26 +31,45 @@ export function FAQ() {
 
     return (
         <section id="faq" className="py-24 bg-[var(--color-off-white)]">
-            <div className="container mx-auto px-4 max-w-3xl">
-                <div className="text-center mb-16">
+            <div ref={ref} className="container mx-auto px-4 max-w-3xl">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
                     <span className="text-[var(--color-pink-accent)] font-bold tracking-wider text-sm uppercase">Dúvidas Frequentes</span>
                     <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-navy)] mt-2">
                         Perguntas Comuns
                     </h2>
-                </div>
+                </motion.div>
 
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                            <button
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                            transition={{
+                                duration: 0.5,
+                                delay: 0.2 + index * 0.1,
+                                ease: "easeOut",
+                            }}
+                            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
+                        >
+                            <motion.button
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                                whileHover={{ backgroundColor: "rgba(249, 250, 251, 1)" }}
+                                className="w-full flex items-center justify-between p-6 text-left transition-colors"
                             >
                                 <span className="font-bold text-[var(--color-navy)] text-lg">{faq.question}</span>
-                                <ChevronDown
-                                    className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${activeIndex === index ? "rotate-180" : ""}`}
-                                />
-                            </button>
+                                <motion.div
+                                    animate={{ rotate: activeIndex === index ? 180 : 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                                </motion.div>
+                            </motion.button>
 
                             <AnimatePresence>
                                 {activeIndex === index && (
@@ -55,15 +77,20 @@ export function FAQ() {
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
                                     >
-                                        <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                                        <motion.div
+                                            initial={{ y: -10 }}
+                                            animate={{ y: 0 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="px-6 pb-6 text-gray-600 leading-relaxed"
+                                        >
                                             {faq.answer}
-                                        </div>
+                                        </motion.div>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

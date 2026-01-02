@@ -3,15 +3,19 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Brand Colors - Updated to 'Aldora Medical' inspired palette */
-  --color-deep-purple: #2A1B5E;
-  /* Deep Violet/Indigo base */
+  /* Brand Colors - Gradiente Roxo/Magenta */
+  --color-deep-purple: #5B2E91;
+  /* Roxo profundo do gradiente */
   --color-neon-orange: #FF6B35;
-  /* Vitality Orange */
-  --color-neon-pink: #E93CAC;
-  /* Magenta/Pink gradient end */
+  /* Vitality Orange - mantido */
+  --color-neon-pink: #C61A8E;
+  /* Magenta vibrante do gradiente */
   --color-soft-lilac: #F3F0FF;
   /* Light purple background */
+  --color-purple-gradient-start: #C61A8E;
+  /* Magenta inicial */
+  --color-purple-gradient-end: #5B2E91;
+  /* Roxo final */
 
   /* System Tokens */
   /* Shift to a very light purple tint */
@@ -19,8 +23,8 @@
   /* Re-mapping for component compatibility */
   --color-deep-navy: var(--color-deep-purple);
   /* Aliased for backward compat */
-  --color-coral-start: var(--color-neon-orange);
-  --color-coral-end: var(--color-neon-pink);
+  --color-coral-start: var(--color-purple-gradient-start);
+  --color-coral-end: var(--color-purple-gradient-end);
   --color-blush: #E0DAFB;
   /* A slightly darker lilac for accents */
 

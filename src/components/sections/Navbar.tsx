@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 import { cn } from "@/lib/utils";
@@ -37,8 +38,15 @@ export function Navbar() {
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-bold text-[var(--color-navy)] tracking-tight">
-                    Dra. <span className="font-light">Emanuelle</span>
+                <Link href="/" className="relative h-12 w-48 flex items-center">
+                    <Image
+                        src="/images/logo1.png"
+                        alt="Consultório Emanuelle Schirm"
+                        width={200}
+                        height={48}
+                        className="object-contain"
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Menu */}

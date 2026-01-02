@@ -1,142 +1,66 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 export function PrismBackground() {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
-
-        const canvas = document.createElement("canvas");
-        container.appendChild(canvas);
-
-        const ctx = canvas.getContext("2d", { alpha: true });
-        if (!ctx) return;
-
-        const resizeCanvas = () => {
-            canvas.width = container.clientWidth;
-            canvas.height = container.clientHeight;
-        };
-
-        resizeCanvas();
-        window.addEventListener("resize", resizeCanvas);
-
-        let time = 0;
-        let animationId: number;
-
-        const animate = () => {
-            time += 0.005;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-
-            // Cores do tema
-            const purpleColor = "#2A1B5E";
-            const pinkColor = "#E93CAC";
-
-            // Pilar de luz principal
-            const pillarWidth = 200;
-            const pillarX = centerX - pillarWidth / 2;
-
-            // Gradient linear para o pilar
-            const gradient = ctx.createLinearGradient(
-                centerX - pillarWidth / 2 - 100,
-                0,
-                centerX + pillarWidth / 2 + 100,
-                0
-            );
-
-            gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
-            gradient.addColorStop(0.2, `${purpleColor}30`);
-            gradient.addColorStop(0.5, `${pinkColor}50`);
-            gradient.addColorStop(0.8, `${purpleColor}30`);
-            gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-            // Draw main pillar with distortion
-            ctx.globalAlpha = 0.6;
-            ctx.fillStyle = gradient;
-
-            ctx.beginPath();
-            ctx.moveTo(pillarX - 150, 0);
-
-            for (let y = 0; y < canvas.height; y += 10) {
-                const wave = Math.sin(y * 0.01 + time * 2) * 50;
-                const x = centerX + wave - pillarWidth / 2;
-                ctx.lineTo(x, y);
-            }
-
-            ctx.lineTo(pillarX + pillarWidth + 150, canvas.height);
-
-            for (let y = canvas.height; y > 0; y -= 10) {
-                const wave = Math.sin(y * 0.01 + time * 2) * 50;
-                const x = centerX + wave + pillarWidth / 2;
-                ctx.lineTo(x, y);
-            }
-
-            ctx.closePath();
-            ctx.fill();
-
-            // Glow effect com blur
-            ctx.globalAlpha = 0.3;
-            ctx.filter = "blur(60px)";
-            ctx.fill();
-            ctx.filter = "none";
-
-            // Radial glow around center
-            ctx.globalAlpha = 0.15;
-            const radialGradient = ctx.createRadialGradient(
-                centerX,
-                centerY,
-                0,
-                centerX,
-                centerY,
-                400
-            );
-            radialGradient.addColorStop(0, `${pinkColor}60`);
-            radialGradient.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-            ctx.fillStyle = radialGradient;
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, 400, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Rotating effect
-            ctx.save();
-            ctx.translate(centerX, centerY);
-            ctx.rotate(time * 0.3);
-
-            ctx.globalAlpha = 0.1;
-            ctx.strokeStyle = `${pinkColor}40`;
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.arc(0, 0, 300, 0, Math.PI * 2);
-            ctx.stroke();
-
-            ctx.restore();
-
-            animationId = requestAnimationFrame(animate);
-        };
-
-        animate();
-
-        return () => {
-            window.removeEventListener("resize", resizeCanvas);
-            cancelAnimationFrame(animationId);
-            canvas.remove();
-        };
-    }, []);
-
     return (
-        <div
-            ref={containerRef}
-            className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
-            style={{
-                background: "white",
-            }}
-        />
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+            <style jsx>{`
+                @keyframes float {
+                    0%, 100% {
+                        transform: translate(0, 0) scale(1);
+                    }
+                    33% {
+                        transform: translate(30px, -30px) scale(1.1);
+                    }
+                    66% {
+                        transform: translate(-30px, 30px) scale(0.9);
+                    }
+                }
+
+                @keyframes rotate {
+                    from {
+                        transform: rotate(0deg);
+                    }
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            `}</style>
+
+            {/* Gradient blobs with smooth animations */}
+            <div
+                className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full opacity-30 blur-[80px]"
+                style={{
+                    background: "radial-gradient(circle, rgba(91, 46, 145, 0.6) 0%, rgba(91, 46, 145, 0.1) 70%)",
+                    animation: "float 15s ease-in-out infinite",
+                }}
+            />
+
+            <div
+                className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] rounded-full opacity-25 blur-[90px]"
+                style={{
+                    background: "radial-gradient(circle, rgba(198, 26, 142, 0.5) 0%, rgba(198, 26, 142, 0.1) 70%)",
+                    animation: "float 20s ease-in-out infinite reverse",
+                    animationDelay: "2s",
+                }}
+            />
+
+            <div
+                className="absolute bottom-[-10%] left-[30%] w-[550px] h-[550px] rounded-full opacity-20 blur-[100px]"
+                style={{
+                    background: "radial-gradient(circle, rgba(91, 46, 145, 0.4) 0%, rgba(198, 26, 142, 0.2) 50%, transparent 70%)",
+                    animation: "float 18s ease-in-out infinite",
+                    animationDelay: "4s",
+                }}
+            />
+
+            {/* Center light pillar effect */}
+            <div
+                className="absolute top-0 left-1/2 w-[200px] h-full -translate-x-1/2 opacity-10 blur-[60px]"
+                style={{
+                    background: "linear-gradient(180deg, rgba(198, 26, 142, 0.3) 0%, rgba(91, 46, 145, 0.2) 50%, rgba(198, 26, 142, 0.3) 100%)",
+                    animation: "rotate 30s linear infinite",
+                }}
+            />
+        </div>
     );
 }

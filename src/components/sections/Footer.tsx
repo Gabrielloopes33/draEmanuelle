@@ -41,11 +41,11 @@ export function Footer() {
                         <ul className="space-y-4 text-gray-400">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 mt-1 shrink-0" />
-                                <span>Rua Principal, 123 - Centro<br />Florianópolis, SC</span>
+                                <span>Av. Brasil, 123 - Centro<br />Ipatinga, MG </span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 shrink-0" />
-                                <span>(48) 99999-9999</span>
+                                <span>(31) 9 8858-2205</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 shrink-0" />
