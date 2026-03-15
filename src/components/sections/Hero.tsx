@@ -45,9 +45,14 @@ export function Hero() {
 
                     <div className="pt-8 flex items-center gap-4 text-sm text-gray-500">
                         <div className="flex -space-x-3">
-                            {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-bold">
-                                    user
+                            {["user01.jpeg", "user02.jpeg", "user03.jpeg", "user04.jpeg"].map((img, i) => (
+                                <div key={i} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-bold overflow-hidden relative">
+                                    <Image
+                                        src={`/images/${img}`}
+                                        alt={`Paciente ${i + 1}`}
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
                             ))}
                         </div>
