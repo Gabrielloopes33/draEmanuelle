@@ -118,7 +118,7 @@ export function About() {
                             <span className="text-[var(--color-pink-accent)] font-bold tracking-wider text-sm uppercase">Conheça a Especialista</span>
                             <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Dra. Emanuelle Schirm</h2>
                             <p className="text-gray-300 mb-6 leading-relaxed">
-                                Com mais de 8 anos de experiência clínica, a Dra. Emanuelle é referência em quiropraxia integrativa. Formada pela [Universidade], possui especializações em Quiropraxia Esportiva e Reabilitação de Coluna.
+                                Com mais de 8 anos de experiência clínica, a Dra. Emanuelle é referência em quiropraxia integrativa. Formada pela Faculdade Uceff de Chapecó SC, possui especializações em Quiropraxia Esportiva e Reabilitação de Coluna.
                             </p>
                             <p className="text-gray-300 mb-8 leading-relaxed">
                                 Seu método de trabalho une a ciência da quiropraxia com um olhar humano e acolhedor, garantindo que cada paciente receba um tratamento personalizado para suas necessidades específicas.

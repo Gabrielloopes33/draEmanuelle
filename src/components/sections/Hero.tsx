@@ -51,7 +51,7 @@ export function Hero() {
                                 </div>
                             ))}
                         </div>
-                        <p>+5.000 pacientes atendidos<br />em Florianópolis</p>
+                        <p>+1.000 pacientes atendidos<br />em Ipatinga</p>
                     </div>
                 </motion.div>
 

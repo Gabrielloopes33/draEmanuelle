@@ -41,7 +41,7 @@ export function Stats() {
 
     const stats = [
         { label: "Anos de Experiência", value: "+8", number: 8, icon: Calendar },
-        { label: "Pacientes Atendidos", value: "+5k", number: 5000, icon: Users },
+        { label: "Pacientes Atendidos", value: "+1k", number: 1000, icon: Users },
         { label: "Certificações", value: "12", number: 12, icon: Award },
         { label: "Recuperação", value: "98%", number: 98, icon: Activity },
     ];
