@@ -14,17 +14,17 @@ export function Testimonials() {
         {
             name: "Ana Silva",
             role: "Paciente desde 2023",
-            content: "Eu sofria com dores de cabeça constantes. Após o tratamento com a Dra. Emanuelle, minha qualidade de vida mudou completamente. Recomendo de olhos fechados!",
+            content: "Conheço Emanuelle há muitos anos e trato com a quiropraxia desde 2017. E os resultados me trazem alívio para as dores e desligamentos decorrentes da minha profissão. A Emanuelle é uma excelente profissional que se destaca pela incansável busca pelo conhecimento. Ela realiza inúmeros cursos que a habilitam em diversas técnicas, trazendo resolutividade para as necessidades dos pacientes. Em um ambiente calmo e agradável, com uma consulta individualizada e personalizada é uma profissional que se destaca em um mercado cheio de pseudos quiropraxistas que não resolvem os problemas dos pacientes.",
         },
         {
             name: "Carlos Mendes",
             role: "Atleta Amador",
-            content: "A quiropraxia esportiva me ajudou a recuperar de uma lesão no joelho e melhorar meu desempenho nos treinos. O atendimento é impecável.",
+            content: "Capacidade e amor pelo que faz! Esta é Emanuelle, Fisioterapeuta Quiropraxista, uma profissional que ama o que faz e não se basta do conhecimento e capacitação. A ela todo o meu respeito, agradecimento e carinho. Obrigada por sempre estar aí, para devolver ao meu corpo o equilíbrio que esta quiropraxia proporciona ❤️",
         },
         {
             name: "Julia Pereira",
             role: "Advogada",
-            content: "Ambiente acolhedor e profissionalismo nota 10. A Dra. explica tudo com muita clareza e o tratamento é muito eficaz.",
+            content: "A Emanuelle foi uma salvação para mim! Estava sofrendo com uma séria inflamação no pé, impossibilitada de andar e sentindo muita dor. Seu atendimento foi extremamente gentil e acolhedor, com muito jeito, ela fez ajustes no meu pé e corpo inteiro, pude sentir 100% de melhora do meu problema! Recomendo!"
         }
     ];
 
