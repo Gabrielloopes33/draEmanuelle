@@ -41,15 +41,15 @@ export function Footer() {
                         <ul className="space-y-4 text-gray-400">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 mt-1 shrink-0" />
-                                <span>Av. Brasil, 123 - Centro<br />Ipatinga, MG </span>
+                                <span>Av. Brasil, 595 - sala 503 - Iguaçu<br />Ipatinga - MG, 35162-082</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 shrink-0" />
-                                <span>(31) 9 8858-2205</span>
+                                <span>31 9 9572-8510</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 shrink-0" />
-                                <span>contato@draemanuelle.com.br</span>
+                                <span>fisioequiroems@gmail.com</span>
                             </li>
                         </ul>
                     </div>

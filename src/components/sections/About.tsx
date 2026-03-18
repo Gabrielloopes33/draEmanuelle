@@ -6,12 +6,16 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { getWhatsAppUrl } from "@/lib/contact";
+import Link from "next/link";
 
 export function About() {
     const ref1 = useRef(null);
     const ref2 = useRef(null);
     const isInView1 = useInView(ref1, { once: true, margin: "-100px" });
     const isInView2 = useInView(ref2, { once: true, margin: "-100px" });
+
+    const whatsappUrl = getWhatsAppUrl("Olá! Gostaria de agendar uma consulta com a Dra. Emanuelle.");
 
     return (
         <section id="sobre" className="py-24 bg-white">
@@ -123,9 +127,11 @@ export function About() {
                             <p className="text-gray-300 mb-8 leading-relaxed">
                                 Seu método de trabalho une a ciência da quiropraxia com um olhar humano e acolhedor, garantindo que cada paciente receba um tratamento personalizado para suas necessidades específicas.
                             </p>
-                            <Button variant="primary">
-                                Agendar Consulta com a Dra.
-                            </Button>
+                            <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                                <Button variant="primary">
+                                    Agendar Consulta com a Dra.
+                                </Button>
+                            </Link>
                         </motion.div>
 
                         <motion.div

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 import { cn } from "@/lib/utils";
+import { getWhatsAppUrl } from "@/lib/contact";
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -26,6 +27,8 @@ export function Navbar() {
         { name: "Depoimentos", href: "#depoimentos" },
         { name: "FAQ", href: "#faq" },
     ];
+
+    const whatsappUrl = getWhatsAppUrl("Olá! Gostaria de agendar uma consulta.");
 
     return (
         <nav
@@ -60,9 +63,11 @@ export function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Button variant="primary" size="sm" className="px-6">
-                        Agendar Consulta
-                    </Button>
+                    <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                        <Button variant="primary" size="sm" className="px-6">
+                            Agendar Consulta
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -87,9 +92,11 @@ export function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Button variant="primary" fullWidth className="mt-4">
-                        Agendar via WhatsApp
-                    </Button>
+                    <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-4">
+                        <Button variant="primary" fullWidth>
+                            Agendar via WhatsApp
+                        </Button>
+                    </Link>
                 </div>
             )}
         </nav>

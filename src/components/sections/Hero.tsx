@@ -5,8 +5,12 @@ import { Button } from "../ui/Button";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { PrismBackground } from "../backgrounds/PrismBackground";
 import Image from "next/image";
+import { getWhatsAppUrl } from "@/lib/contact";
+import Link from "next/link";
 
 export function Hero() {
+    const whatsappUrl = getWhatsAppUrl("Olá! Gostaria de agendar uma avaliação.");
+
     return (
         <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-white">
             {/* Prism Background Effect */}
@@ -35,12 +39,16 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <Button variant="primary" icon={ArrowRight}>
-                            Agendar Avaliação
-                        </Button>
-                        <Button variant="secondary">
-                            Saiba como funciona
-                        </Button>
+                        <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                            <Button variant="primary" icon={ArrowRight}>
+                                Agendar Avaliação
+                            </Button>
+                        </Link>
+                        <Link href="#sobre">
+                            <Button variant="secondary">
+                                Saiba como funciona
+                            </Button>
+                        </Link>
                     </div>
 
                     <div className="pt-8 flex items-center gap-4 text-sm text-gray-500">

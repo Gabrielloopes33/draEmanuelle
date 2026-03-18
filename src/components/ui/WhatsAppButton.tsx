@@ -2,11 +2,10 @@
 
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { getWhatsAppUrl } from "@/lib/contact";
 
 export function WhatsAppButton() {
-    const phoneNumber = "5548999999999"; // Replace with actual number
-    const message = "Olá! Gostaria de agendar uma consulta.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = getWhatsAppUrl("Olá! Gostaria de agendar uma consulta.");
 
     return (
         <motion.a
