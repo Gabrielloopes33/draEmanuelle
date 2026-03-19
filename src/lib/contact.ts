@@ -1,6 +1,6 @@
 // Informações de contato do consultório
 export const CONTACT_INFO = {
-    phoneNumber: "5531999578510",
+    phoneNumber: "5531995728510",
     phoneDisplay: "31 9 9572-8510",
     email: "fisioequiroems@gmail.com",
     address: "Av. Brasil, 595 - sala 503 - Iguaçu, Ipatinga - MG, 35162-082",

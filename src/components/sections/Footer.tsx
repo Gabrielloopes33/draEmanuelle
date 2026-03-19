@@ -1,5 +1,6 @@
 import { MapPin, Phone, Instagram, Facebook, Mail } from "lucide-react";
 import Link from "next/link";
+import { CONTACT_INFO } from "@/lib/contact";
 
 export function Footer() {
     return (
@@ -45,7 +46,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 shrink-0" />
-                                <span>31 9 9572-8510</span>
+                                <span>{CONTACT_INFO.phoneDisplay}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 shrink-0" />
